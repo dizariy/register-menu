@@ -48,8 +48,8 @@ document.addEventListener('click', (event) => {
   if (routeButton) showPanel(routeButton.dataset.route);
 });
 
-// Logins and email accept printable ASCII; password and promo code also permit Cyrillic.
-// Form values stay intact while their panel is hidden, so registration input survives navigation.
+// All form values allow only printable ASCII: English letters, digits, and symbols.
+// Values stay intact while their panel is hidden, so registration input survives navigation.
 function restrictCharacters(input, invalidCharacters) {
   const invalidBeforeInput = new RegExp(invalidCharacters.source);
 
@@ -67,8 +67,13 @@ document.querySelectorAll('[data-ascii-only]').forEach((input) => {
   restrictCharacters(input, /[^\x20-\x7E]/g);
 });
 
-document.querySelectorAll('[data-cyrillic-allowed]').forEach((input) => {
-  restrictCharacters(input, /[^\x20-\x7E\u0400-\u04FF]/g);
+function syncFieldState(input) {
+  input.closest('.field')?.classList.toggle('is-filled', input.value.length > 0);
+}
+
+document.querySelectorAll('.field input').forEach((input) => {
+  syncFieldState(input);
+  input.addEventListener('input', () => syncFieldState(input));
 });
 
 const registerForm = panels.get('register');
