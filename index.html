@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SLS Role Play — формы авторизации, регистрации и восстановления доступа." />
+    <title>SLS Role Play — Авторизация</title>
+    <link rel="preconnect" href="https://www.figma.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="auth-screen">
+      <img
+        class="background-orb"
+        src="https://www.figma.com/api/mcp/asset/e2b2a2a3-d4f2-43ac-b028-fa7f08e4ef44.svg"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <section class="auth-card mode-login" aria-labelledby="auth-title">
+        <form class="auth-panel is-active" data-panel="login" novalidate>
+          <header class="panel-header">
+            <img
+              class="brand-symbol"
+              src="https://www.figma.com/api/mcp/asset/acb6584e-a8da-4be0-a796-14b2cb8cc6cb.png"
+              alt="SLS Role Play"
+            />
+            <h1 class="panel-tag" id="auth-title">АВТОРИЗАЦИЯ</h1>
+          </header>
+
+          <p class="panel-description">
+            Добро пожаловать на SLS Role Play.<br />
+            Войдите в свой аккаунт или создайте новый!
+          </p>
+
+          <div class="fields" aria-label="Данные для авторизации">
+            <label class="field">
+              <span class="field__icon icon-user" aria-hidden="true"></span>
+              <input
+                name="login"
+                type="text"
+                placeholder="Логин"
+                autocomplete="username"
+                autocapitalize="off"
+                spellcheck="false"
+                data-ascii-only
+              />
+            </label>
+            <label class="field">
+              <span class="field__icon icon-password-login" aria-hidden="true"></span>
+              <input
+                name="password"
+                type="password"
+                placeholder="Пароль"
+                autocomplete="current-password"
+                autocapitalize="off"
+                spellcheck="false"
+                data-cyrillic-allowed
+              />
+            </label>
+          </div>
+
+          <div class="actions actions--login">
+            <button class="button button--muted" type="submit">Войти</button>
+            <button class="button button--accent" type="button" data-route="register">Регистрация</button>
+            <button class="button button--muted actions__full" type="button" data-route="recovery">
+              Восстановить доступ
+            </button>
+          </div>
+        </form>
+
+        <form class="auth-panel" data-panel="register" novalidate hidden>
+          <header class="panel-header">
+            <img
+              class="brand-symbol"
+              src="https://www.figma.com/api/mcp/asset/acb6584e-a8da-4be0-a796-14b2cb8cc6cb.png"
+              alt="SLS Role Play"
+            />
+            <h1 class="panel-tag">РЕГИСТРАЦИЯ</h1>
+          </header>
+
+          <p class="panel-description">
+            Добро пожаловать на SLS Role Play.<br />
+            Войдите в свой аккаунт или создайте новый!
+          </p>
+
+          <div class="fields" aria-label="Данные для регистрации">
+            <label class="field">
+              <span class="field__icon icon-user" aria-hidden="true"></span>
+              <input name="register-login" type="text" placeholder="Логин" autocomplete="username" autocapitalize="off" spellcheck="false" data-ascii-only />
+            </label>
+            <label class="field">
+              <span class="field__icon icon-password" aria-hidden="true"></span>
+              <input name="register-password" type="password" placeholder="Придумайте пароль" autocomplete="new-password" autocapitalize="off" spellcheck="false" data-cyrillic-allowed />
+            </label>
+            <div class="field-with-feedback">
+              <label class="field">
+                <span class="field__icon icon-password" aria-hidden="true"></span>
+                <input name="register-password-confirm" type="password" placeholder="Повторите пароль" autocomplete="new-password" autocapitalize="off" spellcheck="false" aria-describedby="password-error" data-cyrillic-allowed />
+              </label>
+              <p class="field-feedback" id="password-error" role="alert" aria-live="polite">
+                Пароли не совпадают
+              </p>
+            </div>
+            <label class="field">
+              <span class="field__icon icon-email" aria-hidden="true"></span>
+              <input name="register-email" type="email" placeholder="Введите почту" autocomplete="email" autocapitalize="off" spellcheck="false" data-ascii-only />
+            </label>
+            <label class="field">
+              <span class="field__icon icon-promo" aria-hidden="true"></span>
+              <input name="promo-code" type="text" placeholder="Введите промокод" autocomplete="off" autocapitalize="off" spellcheck="false" data-cyrillic-allowed />
+            </label>
+          </div>
+
+          <label class="terms">
+            <input class="terms__control" name="terms" type="checkbox" />
+            <span class="terms__check icon-check" aria-hidden="true"></span>
+            <span>Согласен с правилами проекта и принимаю условия</span>
+          </label>
+
+          <div class="actions actions--stacked">
+            <button class="button button--muted" type="submit">Зарегистрироваться</button>
+            <button class="button button--accent" type="button" data-route="login">Вернуться назад</button>
+          </div>
+        </form>
+
+        <form class="auth-panel" data-panel="recovery" novalidate hidden>
+          <header class="panel-header">
+            <img
+              class="brand-symbol"
+              src="https://www.figma.com/api/mcp/asset/acb6584e-a8da-4be0-a796-14b2cb8cc6cb.png"
+              alt="SLS Role Play"
+            />
+            <h1 class="panel-tag panel-tag--recovery">ВОССТАНОВЛЕНИЕ</h1>
+          </header>
+
+          <p class="panel-description">
+            Вам придет письмо для восстановления аккаунта,<br />
+            оно может лежать в спаме!
+          </p>
+
+          <div class="fields" aria-label="Почта для восстановления">
+            <label class="field">
+              <span class="field__icon icon-email" aria-hidden="true"></span>
+              <input name="recovery-email" type="email" placeholder="Введите почту" autocomplete="email" autocapitalize="off" spellcheck="false" data-ascii-only />
+            </label>
+          </div>
+
+          <div class="actions actions--stacked">
+            <button class="button button--muted" type="submit">Получить письмо</button>
+            <button class="button button--accent" type="button" data-route="login">Вернуться назад</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
