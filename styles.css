@@ -293,7 +293,7 @@ button {
 .field input::placeholder {
   color: var(--muted);
   opacity: 1;
-  transition: opacity 180ms ease;
+  transition: opacity 60ms ease;
 }
 
 .field:focus-within input,
@@ -357,11 +357,11 @@ button {
 }
 
 .button--muted:hover {
-  background: rgba(255, 255, 255, 0.09);
   color: #fff;
+  background: #e619ff;
 }
 
-.button--accent {
+/*.button--accent {
   background: var(--accent);
   color: #fff;
   box-shadow: 0 8px 18px rgba(224, 0, 255, 0);
@@ -370,7 +370,7 @@ button {
 .button--accent:hover {
   background: #e619ff;
   box-shadow: 0 8px 18px rgba(224, 0, 255, 0.25);
-}
+}*/
 
 .terms {
   display: flex;
