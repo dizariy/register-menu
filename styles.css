@@ -66,24 +66,12 @@ button {
 .auth-card {
   position: relative;
   width: min(360px, calc(100vw - 32px));
-  height: 399px;
+  height: 606px;
   overflow: hidden;
   border-radius: 15px;
   background: var(--panel);
   box-shadow: 0 18px 48px rgba(19, 19, 28, 0.12);
-  transition: height 480ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 250ms ease;
-}
-
-.auth-card.mode-register {
-  height: 606px;
-}
-
-.auth-card.mode-register.has-password-error {
-  height: 632px;
-}
-
-.auth-card.mode-recovery {
-  height: 342px;
+  transition: box-shadow 250ms ease;
 }
 
 .auth-card:focus-within {
@@ -173,26 +161,31 @@ button {
 }
 
 .field-with-feedback {
-  display: grid;
-  gap: 5px;
+  position: relative;
 }
 
 .field-feedback {
-  max-height: 0;
+  position: absolute;
+  z-index: 1;
+  top: 45px;
+  right: 0;
+  left: 0;
   margin: 0;
   overflow: hidden;
   color: var(--icon);
   font-size: 10px;
   font-weight: 400;
-  line-height: 14px;
+  line-height: 10px;
   opacity: 0;
+  pointer-events: none;
   text-align: center;
-  transition: max-height 180ms ease, opacity 180ms ease;
+  transform: translateY(-2px);
+  transition: opacity 180ms ease, transform 180ms ease;
 }
 
 .field-with-feedback.is-invalid .field-feedback {
-  max-height: 16px;
   opacity: 1;
+  transform: translateY(0);
 }
 
 .field {
@@ -420,13 +413,15 @@ button {
   margin: 2.5px;
   content: "";
   background: transparent;
+  clip-path: inset(0 100% 0 0);
   mask-image: var(--icon-mask);
+  -webkit-clip-path: inset(0 100% 0 0);
   -webkit-mask-image: var(--icon-mask);
-  transition: background-color 180ms ease;
 }
 
 .terms__control:checked + .terms__check::after {
   background: var(--accent);
+  animation: draw-check 300ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .terms:focus-within {
@@ -450,6 +445,18 @@ button {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes draw-check {
+  from {
+    clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
   }
 }
 

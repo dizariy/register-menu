@@ -87,7 +87,6 @@ function validatePasswordConfirmation() {
 
   passwordFeedback.classList.toggle('is-invalid', passwordsMismatch);
   passwordConfirmInput.setAttribute('aria-invalid', String(passwordsMismatch));
-  card.classList.toggle('has-password-error', passwordsMismatch && currentRoute === 'register');
 
   return !passwordsMismatch;
 }
