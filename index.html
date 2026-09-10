@@ -32,24 +32,24 @@
               <input
                 name="login"
                 type="text"
-                placeholder="Логин"
                 autocomplete="username"
                 autocapitalize="off"
                 spellcheck="false"
                 data-ascii-only
               />
+              <span class="field__placeholder">Логин</span>
             </label>
             <label class="field">
               <span class="field__icon icon-password-login" aria-hidden="true"></span>
               <input
                 name="password"
                 type="password"
-                placeholder="Пароль"
                 autocomplete="current-password"
                 autocapitalize="off"
                 spellcheck="false"
                 data-ascii-only
               />
+              <span class="field__placeholder">Пароль</span>
             </label>
           </div>
 
@@ -80,16 +80,19 @@
           <div class="fields" aria-label="Данные для регистрации">
             <label class="field">
               <span class="field__icon icon-user" aria-hidden="true"></span>
-              <input name="register-login" type="text" placeholder="Логин" autocomplete="username" autocapitalize="off" spellcheck="false" data-ascii-only />
+              <input name="register-login" type="text" autocomplete="username" autocapitalize="off" spellcheck="false" data-ascii-only />
+              <span class="field__placeholder">Логин</span>
             </label>
             <label class="field">
               <span class="field__icon icon-password" aria-hidden="true"></span>
-              <input name="register-password" type="password" placeholder="Придумайте пароль" autocomplete="new-password" autocapitalize="off" spellcheck="false" data-ascii-only />
+              <input name="register-password" type="password" autocomplete="new-password" autocapitalize="off" spellcheck="false" data-ascii-only />
+              <span class="field__placeholder">Придумайте пароль</span>
             </label>
             <div class="field-with-feedback">
               <label class="field">
                 <span class="field__icon icon-password" aria-hidden="true"></span>
-                <input name="register-password-confirm" type="password" placeholder="Повторите пароль" autocomplete="new-password" autocapitalize="off" spellcheck="false" aria-describedby="password-error" data-ascii-only />
+                <input name="register-password-confirm" type="password" autocomplete="new-password" autocapitalize="off" spellcheck="false" aria-describedby="password-error" data-ascii-only />
+                <span class="field__placeholder">Повторите пароль</span>
               </label>
               <p class="field-feedback" id="password-error" role="alert" aria-live="polite">
                 Пароли не совпадают
@@ -97,11 +100,13 @@
             </div>
             <label class="field">
               <span class="field__icon icon-email" aria-hidden="true"></span>
-              <input name="register-email" type="email" placeholder="Введите почту" autocomplete="email" autocapitalize="off" spellcheck="false" data-ascii-only />
+              <input name="register-email" type="email" autocomplete="email" autocapitalize="off" spellcheck="false" data-ascii-only />
+              <span class="field__placeholder">Введите почту</span>
             </label>
             <label class="field">
               <span class="field__icon icon-promo" aria-hidden="true"></span>
-              <input name="promo-code" type="text" placeholder="Введите промокод" autocomplete="off" autocapitalize="off" spellcheck="false" data-ascii-only />
+              <input name="promo-code" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" data-ascii-only />
+              <span class="field__placeholder">Введите промокод</span>
             </label>
           </div>
 
@@ -135,7 +140,8 @@
           <div class="fields" aria-label="Почта для восстановления">
             <label class="field">
               <span class="field__icon icon-email" aria-hidden="true"></span>
-              <input name="recovery-email" type="email" placeholder="Введите почту" autocomplete="email" autocapitalize="off" spellcheck="false" data-ascii-only />
+              <input name="recovery-email" type="email" autocomplete="email" autocapitalize="off" spellcheck="false" data-ascii-only />
+              <span class="field__placeholder">Введите почту</span>
             </label>
           </div>
 
